@@ -45,4 +45,33 @@
 # 02. React native basic
 
 - # 01. React native components
-  -
+  - The PC that used for developing and the device that is used for viewing the application need to connect in same wifi or network
+  - Read the component documentation from https://reactnative.dev/docs/components-and-apis
+  - we will learn `View`, `Text`,`TextInput`,`StyleSheet`
+  - `View` is a container like div to contain other elements
+  - `Text` is like p tag which display text
+  - `TextInput` takes input.
+    - there are props that can be passed in the element, are in the right side of documentation page
+    - onChangeText , take a function with text parameter text=>console.log(text)
+    - `value`, `value="default value"`
+    - `placeholder='placeholder text'`
+    - `keyboardType='default'` other value:
+      - default
+      - number-pad
+      - decimal-pad
+      - numeric
+      - email-address
+      - phone-pad
+    - `style={StyleSheet.object}`
+  - StyleSheet element
+    - size in px in not need to include, same as react style, object name is like class name
+      ```js
+      const styles = StyleSheet.create({
+        object: {
+          height: 10,
+          width: 30,
+          backgroundColor: "#fff",
+        },
+      });
+      ```
+    - now we can use the style object like `{style.object}`

@@ -45,6 +45,7 @@
 # 02. React native basic
 
 - # 01. React native components
+
   - The PC that used for developing and the device that is used for viewing the application need to connect in same wifi or network
   - Read the component documentation from https://reactnative.dev/docs/components-and-apis
   - we will learn `View`, `Text`,`TextInput`,`StyleSheet`
@@ -75,12 +76,24 @@
       });
       ```
     - now we can use the style object like `{style.object}`
-  # 02. Styling native component
-  - need to use StyleSheet to give style a component
-  - not same as css but the properties are same as react css
-  - inline css `{propertyName:value}`
-  - `flex:1` is display flex
-  - `alignItems` is align in x direction, `justifyContent` is aligned in y direction, value can be `center|flex-start|space-between` and see more in css help
-  - `alignItems` and `justifyContent` have value `center` put content in center, `flex-start` put content at start, `flex-end` at end, `space-between` will take full space and evenly put space between elements,
-  - `flexDirection:column` default is column, contents will place in y direction form top to bottom
-  - `flexDirection:row`, contents will place in x direction from left to right
+  - # 02. Styling native component
+    - need to use StyleSheet to give style a component
+    - not same as css but the properties are same as react css
+    - inline css `{propertyName:value}`
+    - `flex:1` is display flex
+    - `alignItems` is align in x direction, `justifyContent` is aligned in y direction, value can be `center|flex-start|space-between` and see more in css help
+    - `alignItems` and `justifyContent` have value `center` put content in center, `flex-start` put content at start, `flex-end` at end, `space-between` will take full space and evenly put space between elements,
+    - `flexDirection:column` default is column, contents will place in y direction form top to bottom
+    - `flexDirection:row`, contents will place in x direction from left to right
+  - # 03. Managing state with text input and button
+
+    - StyleSheet can be just one level object `style.container` not `style.app.container`
+    - Button have `onPress` event props
+    - used useState hook to have placeInput and places state
+    - see example here https://www.reactnative.guide/8-styling/8.2-common-styles-mixins.html
+    - css class like style
+
+      ```js
+      style={[styles.one,styles.two]}
+
+      ```

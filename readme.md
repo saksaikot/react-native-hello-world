@@ -111,3 +111,21 @@
     - they all have props, see the documentation
     - used ScrollView instead of View in `app.js`
     - ScrollView is not performance centric, need to use another component
+  - # 06. Dynamic list
+    - used `FlatList` instead of `ScrollView`
+    - required data property, data need array of object with key and value
+    - ```js
+      [
+        {
+          key: 1,
+          value: 1,
+        },
+        {
+          key: 2,
+          value: 2,
+        },
+      ];
+      ```
+    - needed renderItem accept a function with info parameter
+    - info.item will be the item of given data `info.item.data`
+    - no need to use Places component, directly used Place component

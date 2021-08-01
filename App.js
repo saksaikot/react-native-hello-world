@@ -7,8 +7,9 @@ import {
   TextInput,
   Button,
   ScrollView,
+  FlatList,
 } from "react-native";
-import Places from "./src/components/placesView/places";
+import Place from "./src/components/placesView/place";
 import { styles } from "./src/styles/styles";
 
 export default function App() {
@@ -28,15 +29,25 @@ export default function App() {
           title="Add"
           onPress={() => {
             if (placeInput !== "") {
-              setPlaces([...places, placeInput]);
+              setPlaces([
+                ...places,
+                { key: Math.random().toString(), value: placeInput },
+              ]);
               setPlaceInput("");
             }
           }}
         />
       </View>
-      <ScrollView style={{ width: "100%" }}>
-        <Places places={places} handleOnPress={(place) => alert(place)} />
-      </ScrollView>
+      <FlatList
+        style={{ width: "100%" }}
+        data={places}
+        renderItem={(info) => (
+          <Place
+            place={info.item.value}
+            handleOnPress={(place) => alert(info.item.value)}
+          />
+        )}
+      />
     </View>
   );
 }

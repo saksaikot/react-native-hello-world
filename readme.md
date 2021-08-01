@@ -103,3 +103,11 @@
     - there are three files `place.js`, `place.style.js`, `places.js`
     - styles are placed in `place.style.js`
     - vscode is not auto completing need to find extension
+  - # 05. Touchable and Scrollable
+    - wrapped `place.js` in Pressable component to make it touchable
+    - button is by default touchable
+    - to make other components touchable we need to wrap the component with Touchable child component, TouchableOpacity,TouchableHighlight,TouchableWithoutFeedback
+    - there is another component we can use to make component touchable, that is Pressable
+    - they all have props, see the documentation
+    - used ScrollView instead of View in `app.js`
+    - ScrollView is not performance centric, need to use another component

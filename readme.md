@@ -75,3 +75,12 @@
       });
       ```
     - now we can use the style object like `{style.object}`
+  # 02. Styling native component
+  - need to use StyleSheet to give style a component
+  - not same as css but the properties are same as react css
+  - inline css `{propertyName:value}`
+  - `flex:1` is display flex
+  - `alignItems` is align in x direction, `justifyContent` is aligned in y direction, value can be `center|flex-start|space-between` and see more in css help
+  - `alignItems` and `justifyContent` have value `center` put content in center, `flex-start` put content at start, `flex-end` at end, `space-between` will take full space and evenly put space between elements,
+  - `flexDirection:column` default is column, contents will place in y direction form top to bottom
+  - `flexDirection:row`, contents will place in x direction from left to right

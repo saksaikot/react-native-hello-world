@@ -1,11 +1,6 @@
-export const app = {
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    padding: 20,
-  },
+import { StyleSheet } from "react-native";
+
+export default StyleSheet.create({
   inputView: {
     marginTop: 50,
     flexDirection: "row",
@@ -18,7 +13,4 @@ export const app = {
     borderColor: "green",
     padding: 7,
   },
-  placeButton: {
-    // width: "20%",
-  },
-};
+});

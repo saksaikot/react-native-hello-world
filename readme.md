@@ -129,3 +129,8 @@
     - needed renderItem accept a function with info parameter
     - info.item will be the item of given data `info.item.data`
     - no need to use Places component, directly used Place component
+  - # 07. Cleaning app.js
+    - Created two separate component `FlatPlacesList.js` and `PlaceInput.js`
+    - created separate style `placeInput.style.js` for `PlaceInput` component
+    - created separate style `app.style.js` for `App.js`
+    - removed unused imports

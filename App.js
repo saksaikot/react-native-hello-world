@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import Places from "./src/components/placesView/places";
 import { styles } from "./src/styles/styles";
 
 export default function App() {
@@ -25,6 +26,9 @@ export default function App() {
             }
           }}
         />
+      </View>
+      <View style={{ width: "100%" }}>
+        <Places places={places} />
       </View>
     </View>
   );

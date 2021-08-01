@@ -97,3 +97,9 @@
       style={[styles.one,styles.two]}
 
       ```
+
+  - # 04. Creating component
+    - under src > components created placeView folder
+    - there are three files `place.js`, `place.style.js`, `places.js`
+    - styles are placed in `place.style.js`
+    - vscode is not auto completing need to find extension

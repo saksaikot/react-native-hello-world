@@ -1,8 +1,8 @@
 import React from "react";
 import { FlatList } from "react-native";
-import Place from "./place";
+import Place from "./Place";
 
-export default function FlatPlacesList({ places }) {
+export default function FlatPlacesList({ places, handleModalSelect }) {
   return (
     <FlatList
       style={{ width: "100%" }}
@@ -10,7 +10,7 @@ export default function FlatPlacesList({ places }) {
       renderItem={(info) => (
         <Place
           place={info.item.value}
-          handleOnPress={(place) => alert(info.item.value)}
+          handleOnPress={() => handleModalSelect(info.item)}
         />
       )}
     />

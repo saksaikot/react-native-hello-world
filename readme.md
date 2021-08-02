@@ -134,3 +134,7 @@
     - created separate style `placeInput.style.js` for `PlaceInput` component
     - created separate style `app.style.js` for `App.js`
     - removed unused imports
+  - # 08. Adding modal
+    - Modal is not working as expected in web, working in android
+    - Modal is fixed by conditional rendering
+    - added styles

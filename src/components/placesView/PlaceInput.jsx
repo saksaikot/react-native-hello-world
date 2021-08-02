@@ -18,7 +18,7 @@ export default function PlaceInput({
         placeholder="Add a Place.."
       />
       <Button
-        title="Add"
+        title="Add "
         onPress={() => {
           if (placeInput !== "") {
             setPlaces([

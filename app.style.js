@@ -1,10 +1,11 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-  place: {
-    width: "100%",
+  container: {
+    width: "95%",
     padding: 10,
-    backgroundColor: "#eee",
-    margin: 5,
+    margin: 10,
+    boxSizing: "border-box",
+    textAlign: "center",
   },
 });

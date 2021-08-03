@@ -144,3 +144,69 @@
     - image must have width and height
     - used `View` onLayout props to get the size of image container
     - place added image, used flex:1, and justifyContent:space-between
+
+# 03. Redux refresh
+
+- # 01. Complexity of managing state
+
+  - often we may need to access a child component state that is not a direct children or that state need to put in the root component. for bigger project this can be very difficult to make the state up for many component.
+  - the solution is to have a global state manager or global store
+  - redux provide this global store feature
+
+- # 2. Redux flow
+
+  - react component->dispatch->Action->Reducer->Update state->[[Store]]->trigger Automatic Subscription-> pass the state as props -> react component
+
+- # 3. Store and Reducer
+
+  - `npm init --yes` to initialize npm
+  - `npm i redux` to install redux
+  - in `index.js` import redux.
+  - `const redux=require('redux')`
+  - we need to create store, and store need a reducer function
+  - a reducer function takes two object, state and action
+  - `const reducer=(state,action)=>return state;`
+  - the state parameter can have default state initialization,
+    like (state=initState,action)
+  - this reducer function need to pass in createStore method of redux to create the store
+  - `redux.createStore(reducer)`, just the function reference.
+  - then if we want to see or get the current state then call `store.getState()`
+
+- # 4. Dispatching Action
+
+  - `store` have a method called dispatch
+  - dispatch takes an object
+  - the `type` key is required
+  - we put the action type name in `type` key, like INCREMENT , DECREMENT
+  - we can also pass an object optionally
+  - the key for optional object can be anything but for convenience we use payload as key
+  - so call dispatch like `store.dispatch({type:'INCREMENT_NUM',payload:{num:100}})`
+  - the reducer will perform separate action depending on type.
+  - this dispatch object will received by reducer action variable or parameter
+  - so in reducer function
+    ```js
+    action = { type: "INCREMENT_NUM", payload: { num: 100 } };
+    ```
+  - now in reducer we can use switch case to perform task depending on action.type
+  - then finally return the state
+  - when returning state alway make a copy of state using spread operation then update the state.
+  - `return {...state, number:state.number+1}`
+  - switch case basic:
+
+    ```js
+    switch (variableToCheck) {
+      case "ifMatchThis":
+      //perform tasks
+      //return or break
+
+      case "match2":
+      //...same
+
+      default:
+      //return
+    }
+    ```
+
+  - 5. Store subscription
+    - call subscribe after store and before dispatch
+    - then each time dispatch is called then the given function in subscribe will be call

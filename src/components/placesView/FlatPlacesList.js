@@ -10,6 +10,7 @@ export default function FlatPlacesList({ places, handleModalSelect }) {
       renderItem={(info) => (
         <Place
           place={info.item.value}
+          image={info.item.image}
           handleOnPress={() => handleModalSelect(info.item)}
         />
       )}

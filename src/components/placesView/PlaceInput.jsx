@@ -8,6 +8,7 @@ export default function PlaceInput({
   setPlaceInput,
   places,
   setPlaces,
+  defaultPlaceImage,
 }) {
   return (
     <View style={styles.inputView}>
@@ -23,7 +24,14 @@ export default function PlaceInput({
           if (placeInput !== "") {
             setPlaces([
               ...places,
-              { key: Math.random().toString(), value: placeInput },
+              {
+                key: Math.random().toString(),
+                value: placeInput,
+                // image: defaultPlaceImage,
+                image: {
+                  uri: "https://www.travelandexplorebd.com/storage/app/public/posts/September2019/parla2.jpg",
+                },
+              },
             ]);
             setPlaceInput("");
           }

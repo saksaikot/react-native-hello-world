@@ -5,7 +5,6 @@ export default StyleSheet.create({
     width: "95%",
     padding: 10,
     margin: 10,
-    boxSizing: "border-box",
     textAlign: "center",
   },
 });

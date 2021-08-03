@@ -138,3 +138,9 @@
     - Modal is not working as expected in web, working in android
     - Modal is fixed by conditional rendering
     - added styles
+  - # 09. Completing modal by adding image and other details
+    - created new `ResponsiveImage` element , react native can not use style width:100% and height: auto
+    - there is also a bug where for web `Image.resolveAssetSource` don't work and if uri is present then `Image.getSize` needs the uri only not full image object
+    - image must have width and height
+    - used `View` onLayout props to get the size of image container
+    - place added image, used flex:1, and justifyContent:space-between

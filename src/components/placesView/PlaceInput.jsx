@@ -1,5 +1,7 @@
 import React from "react";
 import { View, TextInput, Button } from "react-native";
+import { useDispatch } from "react-redux";
+import actions from "../../redux/actionCreator";
 
 import styles from "./placeInput.style";
 
@@ -7,9 +9,12 @@ export default function PlaceInput({
   placeInput,
   setPlaceInput,
   places,
-  setPlaces,
+  // setPlaces,
   defaultPlaceImage,
 }) {
+  const dispatch = useDispatch();
+  const addPlace = (place) => dispatch(actions.addPlace(place));
+
   return (
     <View style={styles.inputView}>
       <TextInput
@@ -22,17 +27,14 @@ export default function PlaceInput({
         title="Add "
         onPress={() => {
           if (placeInput !== "") {
-            setPlaces([
-              ...places,
-              {
-                key: Math.random().toString(),
-                value: placeInput,
-                // image: defaultPlaceImage,
-                image: {
-                  uri: "https://www.travelandexplorebd.com/storage/app/public/posts/September2019/parla2.jpg",
-                },
+            addPlace({
+              key: Math.random().toString(),
+              value: placeInput,
+              // image: defaultPlaceImage,
+              image: {
+                uri: "https://www.travelandexplorebd.com/storage/app/public/posts/September2019/parla2.jpg",
               },
-            ]);
+            });
             setPlaceInput("");
           }
         }}

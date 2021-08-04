@@ -1,22 +1,29 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
-import { View, Image } from "react-native";
+import { View } from "react-native";
 import FlatPlacesList from "./placesView/FlatPlacesList";
 import PlaceInput from "./placesView/PlaceInput";
 import styles from "./mainComponent.style";
 import PlaceDetailModal from "./placeDetailModal/PlaceDetailModal";
-
 import defaultPlaceImage from "../../assets/images/defaultPlace.jpg";
+import { useSelector, useDispatch } from "react-redux";
+import actions from "../redux/actionCreator";
 
 export default function MainComponent() {
   const [placeInput, setPlaceInput] = useState("");
-  const [places, setPlaces] = useState([]);
+  // const [places, setPlaces] = useState([]);
   const [selectedPlace, setSelectedPlace] = useState(null);
+
+  const places = useSelector((state) => state.places);
+  const dispatch = useDispatch();
+  // const addPlace = (place) => dispatch(actions.addPlace(place));
+  const deletePlace = (key) => dispatch(actions.deletePlace(key));
 
   const handleModalClose = () => setSelectedPlace(null);
   const handleModalSelect = (place) => setSelectedPlace(place);
   const handleModalDelete = (key) => {
-    setPlaces(places.filter((place) => key !== place.key));
+    // setPlaces(places.filter((place) => key !== place.key));
+    deletePlace(key);
     setSelectedPlace(null);
   };
 
@@ -33,7 +40,7 @@ export default function MainComponent() {
               placeInput,
               setPlaceInput,
               places,
-              setPlaces,
+              // setPlaces,
               defaultPlaceImage,
             }}
           />

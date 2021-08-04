@@ -212,10 +212,21 @@
     - then each time dispatch is called then the given function in subscribe will be call
 
 - # 04. Using redux in our app
+
   - # 1. Creating and connecting redux store
-  - Moved `App.js`, under `components`>`MainComponent.js`
-  - created `redux` folder under `src`
-  - created `actionType`, `reducer` and `store` file
-  - created store with the reducer
-  - in App.js the MainComponent is wrapped in Provider component of react-redux
-  - passed store object as store attribute
+
+    - Moved `App.js`, under `components`>`MainComponent.js`
+    - created `redux` folder under `src`
+    - created `actionType`, `reducer` and `store` file
+    - created store with the reducer
+    - in App.js the MainComponent is wrapped in Provider component of react-redux
+    - passed store object as store attribute
+
+  - # 2-3. Dispatching action to add place and delete place
+
+    - imported `useSelector,useDispatch` from react-redux
+    - to get the state property ` const places = useSelector((state) => state.places);`
+    - to use the dispatch `const dispatch=useDispatch()`
+    - adding action , `const addPlace=place=> dispatch(actions.addPlace(place))`
+    - or can call the dispatch directly
+    - `dispatch(actions.addPlace(place))`

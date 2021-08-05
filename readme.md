@@ -230,3 +230,7 @@
     - adding action , `const addPlace=place=> dispatch(actions.addPlace(place))`
     - or can call the dispatch directly
     - `dispatch(actions.addPlace(place))`
+
+  - # 4. dispatching in actionCreator
+  - imported dispatch from store
+  - used dispatch in actionCreator

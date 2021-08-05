@@ -6,8 +6,8 @@ import PlaceInput from "./placesView/PlaceInput";
 import styles from "./mainComponent.style";
 import PlaceDetailModal from "./placeDetailModal/PlaceDetailModal";
 import defaultPlaceImage from "../../assets/images/defaultPlace.jpg";
-import { useSelector, useDispatch } from "react-redux";
-import actions from "../redux/actionCreator";
+import { useSelector } from "react-redux";
+import { deletePlace } from "../redux/actionCreator";
 
 export default function MainComponent() {
   const [placeInput, setPlaceInput] = useState("");
@@ -15,9 +15,9 @@ export default function MainComponent() {
   const [selectedPlace, setSelectedPlace] = useState(null);
 
   const places = useSelector((state) => state.places);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const addPlace = (place) => dispatch(actions.addPlace(place));
-  const deletePlace = (key) => dispatch(actions.deletePlace(key));
+  // const {deletePlace} = actions.deletePlace;
 
   const handleModalClose = () => setSelectedPlace(null);
   const handleModalSelect = (place) => setSelectedPlace(place);

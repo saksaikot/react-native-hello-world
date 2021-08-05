@@ -1,7 +1,6 @@
 import React from "react";
 import { View, TextInput, Button } from "react-native";
-import { useDispatch } from "react-redux";
-import actions from "../../redux/actionCreator";
+import { addPlace } from "../../redux/actionCreator";
 
 import styles from "./placeInput.style";
 
@@ -12,8 +11,7 @@ export default function PlaceInput({
   // setPlaces,
   defaultPlaceImage,
 }) {
-  const dispatch = useDispatch();
-  const addPlace = (place) => dispatch(actions.addPlace(place));
+  // const { addPlace } = actions;
 
   return (
     <View style={styles.inputView}>

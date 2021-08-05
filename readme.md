@@ -281,3 +281,27 @@
         </Stack.Navigator>
         ```
       - Created Login component under login folder
+
+  - # 02. Navigate to a Screen
+
+    - create a `NavigationTab` component under `navigationTab` folder
+    - add a button with `title` Login and `onPress` call props.navigation.navigate('login');
+    - add the `NavigationTab` component to `Stack.Screen`
+
+  - # 03. Tab navigation
+
+    - install react-navigation/bottom-tabs `npm install @react-navigation/bottom-tabs`
+    - import `import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";`
+    - create Tab component `const Tab = createBottomTabNavigator();`
+    - Inside `Tab.Navigator` create the `Tab.Screen`
+
+    ```js
+    <Tab.Navigator>
+      <Tab.Screen name="Find Places" component={FindPlaces} />
+      <Tab.Screen name="Share Places" component={SharePlaces} />
+    </Tab.Navigator>
+    ```
+
+    - `Tab.Navigator` must wrapped with `NavigationContainer`
+    - but here it is already in App Component
+    - here only return `Tab.Navigator` element otherwise tab will not work properly

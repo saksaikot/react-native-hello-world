@@ -256,3 +256,4 @@
     - wrap Icon component with `Pressable` component
     - add Button `onPress` attribute to `Pressable`
     - for delete button used `name='times-circle'`
+    - added style `cursor:"pointer"`

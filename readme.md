@@ -257,3 +257,27 @@
     - add Button `onPress` attribute to `Pressable`
     - for delete button used `name='times-circle'`
     - added style `cursor:"pointer"`
+
+- # 07. navigation
+
+  - # 01. Setting up navigation
+
+    - follow reactNavigation.org more installation details https://reactnavigation.org/docs/getting-started/
+    - exit from server if running
+    - install react-navigation/native `npm install @react-navigation/native`
+    - install dependency `expo install react-native-screens react-native-safe-area-context`
+    - code did not compiled, missing `react-navigation/stack`
+    - need to install react native stack `npm install @react-navigation/stack`
+    - uses:
+      - first import at first line of the App component `import "react-native-gesture-handler";`
+      - import NavigationContainer `import { NavigationContainer } from "@react-navigation/native";`
+      - wrap all Component under NavigationContainer component
+      - import createStackNavigator from react-navigation/stack `import { createStackNavigator } from "@react-navigation/stack";`
+      - make Stack component from createStackNavigator `const Stack = createStackNavigator();`
+      - ## to make stack component create component <Stack.Screen> with name and component property, name is the name of component and component is the imported component.Then wrap it with Stack.Navigator
+        ```jsx
+        <Stack.Navigator>
+          <Stack.Screen name="login" component={Login} />
+        </Stack.Navigator>
+        ```
+      - Created Login component under login folder

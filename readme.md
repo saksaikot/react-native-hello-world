@@ -234,3 +234,25 @@
   - # 4. dispatching in actionCreator
   - imported dispatch from store
   - used dispatch in actionCreator
+
+- # 06. Using third party library for icons
+
+  - # 1. Adding icon library
+
+    - run `npm run eject` to separate android and web configuration
+    - before running `npm run eject` it is important to commit any changes and push the commit
+    - while running android project name will be asked
+    - the project name will be the reverse domain name of the app
+    - we named it io.helloWorld.client which is reverse of client.helloWorld.io
+    - after eject we need to `npm run web` instead of `npm start`
+    - we need to install `npm install --save react-native-vector-icons`
+    - then for android configuration we need to add this line `apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"` in `android/app/build.gradle` file where `apply from` line are.
+    - then import Icon from this library
+    - `import Icon from "react-native-vector-icons/FontAwesome5";`
+    - use of Icon Component
+    - `<Icon name="name-of-icon" size={50} color="red" />`
+
+  - # 2. Completing icon
+    - wrap Icon component with `Pressable` component
+    - add Button `onPress` attribute to `Pressable`
+    - for delete button used `name='times-circle'`

@@ -305,3 +305,12 @@
     - `Tab.Navigator` must wrapped with `NavigationContainer`
     - but here it is already in App Component
     - here only return `Tab.Navigator` element otherwise tab will not work properly
+    - ## can not use cursor:"pointer" as style
+
+  - # 04. Adding Icons in tab
+    - See icon details or name at https://oblador.github.io/react-native-vector-icons/
+    - import Icons from ionicons `import Icons from "react-native-vector-icons/Ionicons";`
+    - use `options` attribute to add icon option
+    - `options` is an object, one property of this option is `tabBarIcon` which takes a function with `{size,color}` parameter.
+    - there we can return our icon object
+    - `<Icons name="map" color={color} size={size} />`

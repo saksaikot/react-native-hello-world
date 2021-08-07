@@ -320,3 +320,24 @@
   - # 1. Splitting MainComponent
     - moved `MainComponent.js` to `homeTabs/FindPlaces.js`
     - moved `places` view and modal to SharePlaces
+  - # 2. Setting up Image picker
+
+        - Image picker doc https://docs.expo.dev/versions/latest/sdk/imagepicker/
+        - Installation in bare React Native projects
+          - `expo install expo-image-picker`
+          - # Configure for Android
+            - edit `.\android\app\src\main\AndroidManifest.xml`
+            - add these permission if is not already there
+              ```jsx
+                <uses-permission android:name="android.permission.CAMERA" />
+                <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+                <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+              ```
+            - add activity within application
+              -
+                ```jsx
+                <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" android:theme="@style/Base.Theme.AppCompat" />
+
+
+                ```
+            - create a `PickImage` Component with a `Button` under `pickImage` folder

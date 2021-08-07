@@ -314,3 +314,9 @@
     - `options` is an object, one property of this option is `tabBarIcon` which takes a function with `{size,color}` parameter.
     - there we can return our icon object
     - `<Icons name="map" color={color} size={size} />`
+
+- # 08. Adding image picker
+
+  - # 1. Splitting MainComponent
+    - moved `MainComponent.js` to `homeTabs/FindPlaces.js`
+    - moved `places` view and modal to SharePlaces

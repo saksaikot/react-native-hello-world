@@ -1,16 +1,28 @@
-import React from "react";
-import { View, Text, Button } from "react-native";
+import React, { useState } from "react";
+import { View } from "react-native";
+import PlaceInput from "../placesView/PlaceInput";
+import styles from "./findPlaces.style";
+import defaultPlaceImage from "../../../assets/images/defaultPlace.jpg";
+import { useSelector } from "react-redux";
 
-export default function FindPlaces({ navigation }) {
+export default function MainComponent() {
+  const [placeInput, setPlaceInput] = useState("");
+
+  const places = useSelector((state) => state.places);
+
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Find Places</Text>
-      <View>
-        <Button
-          title="Login"
-          onPress={() => navigation.navigate("login")}
-        ></Button>
+    <>
+      <View style={styles.container}>
+        <PlaceInput
+          {...{
+            placeInput,
+            setPlaceInput,
+            places,
+            // setPlaces,
+            defaultPlaceImage,
+          }}
+        />
       </View>
-    </View>
+    </>
   );
 }

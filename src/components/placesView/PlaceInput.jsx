@@ -7,9 +7,7 @@ import styles from "./placeInput.style";
 export default function PlaceInput({
   placeInput,
   setPlaceInput,
-  places,
-  // setPlaces,
-  defaultPlaceImage,
+  handleAddPlace,
 }) {
   // const { addPlace } = actions;
 
@@ -21,22 +19,7 @@ export default function PlaceInput({
         value={placeInput}
         placeholder="Add a Place.."
       />
-      <Button
-        title="Add "
-        onPress={() => {
-          if (placeInput !== "") {
-            addPlace({
-              key: Math.random().toString(),
-              value: placeInput,
-              // image: defaultPlaceImage,
-              image: {
-                uri: "https://www.travelandexplorebd.com/storage/app/public/posts/September2019/parla2.jpg",
-              },
-            });
-            setPlaceInput("");
-          }
-        }}
-      />
+      <Button title="Add Place" onPress={() => handleAddPlace()} />
     </View>
   );
 }

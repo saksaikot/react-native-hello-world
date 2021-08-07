@@ -1,30 +1,28 @@
 import React, { useState } from "react";
-import { View } from "react-native";
-import PlaceInput from "../placesView/PlaceInput";
-import styles from "./findPlaces.style";
-import defaultPlaceImage from "../../../assets/images/defaultPlace.jpg";
 import { useSelector } from "react-redux";
-import PickImage from "../pickImage/PickImage";
+import PlaceDetailModal from "../placeDetailModal/PlaceDetailModal";
+import FlatPlacesList from "../placesView/FlatPlacesList";
+import { deletePlace } from "../../redux/actionCreator";
 
-export default function MainComponent() {
-  const [placeInput, setPlaceInput] = useState("");
-
+export default function FindPlaces() {
+  const [selectedPlace, setSelectedPlace] = useState(null);
   const places = useSelector((state) => state.places);
 
+  const handleModalSelect = (place) => setSelectedPlace(place);
+  const handleModalClose = () => setSelectedPlace(null);
+  const handleModalDelete = (key) => {
+    // setPlaces(places.filter((place) => key !== place.key));
+    deletePlace(key);
+    setSelectedPlace(null);
+  };
   return (
     <>
-      <View style={styles.container}>
-        <PickImage />
-        <PlaceInput
-          {...{
-            placeInput,
-            setPlaceInput,
-            places,
-            // setPlaces,
-            defaultPlaceImage,
-          }}
+      {selectedPlace && (
+        <PlaceDetailModal
+          {...{ selectedPlace, handleModalClose, handleModalDelete }}
         />
-      </View>
+      )}
+      <FlatPlacesList {...{ places, handleModalSelect }} />
     </>
   );
 }

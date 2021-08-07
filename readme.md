@@ -341,3 +341,20 @@
 
                 ```
             - create a `PickImage` Component with a `Button` under `pickImage` folder
+
+  - # 3&4.Building Share Place Component
+
+    - import imagePicker `import * as imagePicker from "expo-image-picker";`
+    - install await-of `npm i await-of ` to handle async-await without try/catch block
+    - import await-of `import { of } from "await-of";`
+    - use async `imagePicker.launchImageLibraryAsync(options)` to get image from user library
+    - ```js
+      const options = {
+        mediaTypes: imagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [4, 3],
+        quality: 1,
+      };
+      ```
+    - swap FindPlace and SharePage , that was a mistake
+    - ## Note: always put text inside Text component

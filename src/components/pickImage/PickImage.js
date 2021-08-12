@@ -13,7 +13,10 @@ export default function PickImage({ setImage, setErrorMessage }) {
       mediaTypes: imagePicker.MediaTypeOptions.All,
       allowsEditing: true,
       aspect: [4, 3],
-      quality: 1,
+      quality: 0.8,
+      maxWidth: 500,
+      maxHeight: 500,
+      base64: true,
     };
     setImage(null);
     const [imagePick, imagePickError] = await of(

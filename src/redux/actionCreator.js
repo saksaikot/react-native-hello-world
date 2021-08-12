@@ -1,5 +1,6 @@
 import * as actionType from "./actionTypes";
 import { dispatch } from "./store";
+import { db } from "../firebase/firebase";
 
 export const addPlace = (place) =>
   dispatch({
@@ -12,10 +13,15 @@ export const deletePlace = (key) =>
     type: actionType.DELETE_PLACE,
     payload: key,
   });
-
+export const loadPlaces = (places) =>
+  dispatch({
+    type: actionType.LOAD_PLACES,
+    payload: places,
+  });
 const actions = {
   addPlace,
   deletePlace,
+  loadPlaces,
 };
 
 export default actions;

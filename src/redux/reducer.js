@@ -14,6 +14,11 @@ export const rootReducer = (state = INIT_STATE, action) => {
         ...state,
         places: state.places.filter((place) => action.payload !== place.key),
       };
+    case actionType.LOAD_PLACES:
+      return {
+        ...state,
+        places: action.payload,
+      };
 
     default:
       return state;

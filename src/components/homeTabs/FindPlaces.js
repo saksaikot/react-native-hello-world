@@ -7,7 +7,7 @@ import { deletePlace } from "../../redux/actionCreator";
 export default function FindPlaces() {
   const [selectedPlace, setSelectedPlace] = useState(null);
   const places = useSelector((state) => state.places);
-  console.log(places, "findplaces");
+  // console.log(places, "findplaces");
 
   const handleModalSelect = (place) => setSelectedPlace(place);
   const handleModalClose = () => setSelectedPlace(null);

@@ -360,7 +360,9 @@
     - ## Note: always put text inside Text component
 
 - # 10. managing data using rest api
-- use firebase library to load place and add place
-- used react-native-dotenv
-- used await-of library
-- for getAllAsArray return promise
+  - use firebase library to load place and add place
+  - used react-native-dotenv
+  - used await-of library
+  - for getAllAsArray return promise
+  - firebase need to install using expo `expo install firebase`
+  - to update expo-cli `npm install -g expo-cli`

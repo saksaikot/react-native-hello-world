@@ -19,7 +19,7 @@ export default function SharePlaces({ navigation }) {
   useEffect(() => {
     const run = async () => {
       const [places, placesError] = await of(db.places.getAllAsArray());
-      console.log(places);
+      // console.log(places);
       loadPlaces(places);
     };
     run();
